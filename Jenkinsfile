@@ -24,7 +24,7 @@ pipeline {
 		
 		 stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'mvn -f DevopsSR/pom.xml  test'
             }
 		}
 		
