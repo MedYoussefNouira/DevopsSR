@@ -11,7 +11,7 @@ pipeline {
                 // Cloning the repository
 				echo 'cloning into'
 				sh 'pwd'
-				sh 'rm -rf /var/jenkins_home/workspace/azzz/*'
+				sh 'rm -rf /var/jenkins_home/workspace/DevopsSR/*'
 				sh "git clone 'https://MedYoussefNouira:Alternance1997@github.com/MedYoussefNouira/DevopsSR.git'"
             }
         }
