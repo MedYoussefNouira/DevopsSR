@@ -18,7 +18,7 @@ pipeline {
 
         stage('Build') {
             steps {
-				sh 'mvn -f ExamenDevops/pom.xml clean install'
+				sh 'mvn -f DevopsSR/pom.xml clean install'
             }
         }
 
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 // Running Sonar analysis
                 withSonarQubeEnv('sonar') {
-                    sh 'mvn -f ExamenDevops/pom.xml sonar:sonar -Dsonar.projectKey=Jenkins'
+                    sh 'mvn -f DevopsSR/pom.xml sonar:sonar -Dsonar.projectKey=Jenkins'
                 }
             }
 			}
