@@ -26,7 +26,8 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-			
+		}
+		
         stage('Sonar Analysis') {
             steps {
                 // Running Sonar analysis
