@@ -26,7 +26,7 @@ pipeline {
             steps {
                 // Running Sonar analysis
                 withSonarQubeEnv('sonar') {
-                    sh 'mvn -f DevopsSR/pom.xml sonar:sonar -Dsonar.projectKey=Jenkins'
+                    sh 'mvn -f DevopsSR/pom.xml sonar:sonar -Dsonar.projectKey=Jenkins123 -Dsonar.login=sqa_4316afe53e36e4c81901b1199609994fc320982e'
                 }
             }
 			}
