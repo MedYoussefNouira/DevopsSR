@@ -21,7 +21,12 @@ pipeline {
 				sh 'mvn -f DevopsSR/pom.xml clean install'
             }
         }
-
+		
+		 stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+			
         stage('Sonar Analysis') {
             steps {
                 // Running Sonar analysis
@@ -30,7 +35,7 @@ pipeline {
                 }
             }
 			}
-	
+		
 
         stage('Deploy to Nexus') {
             steps {
