@@ -46,7 +46,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-					echo 'part not working so i commented it'
+					echo 'Tht deploy part is not working';
 					/* withCredentials([usernamePassword(credentialsId: 'nexus', usernameVariable: 'admin', passwordVariable: 'Alternance1997')])
                         nexusArtifactUploader(
                             nexusVersion: 'nexus3',
