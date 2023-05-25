@@ -39,7 +39,7 @@ pipeline {
 			
 			    stage('Package') {
             steps {
-                sh 'mvn package'
+                sh 'mvn -f DevopsSR/pom.xml package'
             }
         }
 		
