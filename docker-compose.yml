@@ -9,6 +9,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
       MYSQL_ROOT_PASSWORD: Alternance1997
       
+      
     volumes:
       - /var/lib/docker/volumes/65d29fbec29c5c5da10580b150f2d7fe14cbce94955bce057e8c2728ab9be211/_data
     ports:

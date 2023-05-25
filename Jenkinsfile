@@ -64,6 +64,17 @@ pipeline {
                          ) */
             }
 			
+			 stage('docker-build') {
+            steps {
+                sh 'curl -u admin:admin -O http://localhost:8081/nexus/repository/DevopsSR/com/esprit/examen/ExamThourayaS2-0.0.1-SNAPSHOT.jar'
+                script {
+                            docker.withRegistry('https://index.docker.io/v1', 'dockerhub_creds') {
+                            def image = docker.build('youssefnouira/DevopsSR', '-f Dockerfile --build-arg JAR_FILE=ExamThourayaS2-0.0.1-SNAPSHOT.jar .')
+                            }
+                }
+
+            }
+			}
             }
     }
 }
