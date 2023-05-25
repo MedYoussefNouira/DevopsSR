@@ -38,13 +38,23 @@ pipeline {
 			}
 		
 
-        stage('Deploy to Nexus') {
+                stage('Deploy') {
             steps {
-                // Deploying to Nexus repository
-                withMaven(maven: 'Maven') {
-                    sh 'mvn deploy'
-                }
+                        nexusArtifactUploader(
+                            nexusVersion: 'nexus3',
+                            protocol: 'http',
+                            nexusUrl: 'localhost:8081/nexus',
+                            groupId: 'com.esprit.examen',
+                            version: '1.0',
+                            repository: 'DevopsSR',
+                            artifacts: [
+                                [artifactId: 'ExamThourayaS2-0.0.1-SNAPSHOT',
+                                 classifier: '',
+                                 file: 'target/ExamThourayaS2-0.0.1-SNAPSHOT.jar',
+                                 type: 'jar']
+                            ]
+                         )
             }
-        }
+            }
     }
 }

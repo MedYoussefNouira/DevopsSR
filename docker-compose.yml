@@ -1,0 +1,31 @@
+version: '3.0'
+
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: examv2thouraya
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: Alternance1997
+      
+    volumes:
+      - /var/lib/docker/volumes/65d29fbec29c5c5da10580b150f2d7fe14cbce94955bce057e8c2728ab9be211/_data
+    ports:
+      - '3306:3306'
+  Spring:
+    image: imagejava
+    restart: always
+    ports:
+      - '8089:8089'
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/examv2thouraya?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: asijee
+    depends_on:
+      - mysql
+      
+
+
+
+
