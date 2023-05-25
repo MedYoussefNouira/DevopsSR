@@ -44,7 +44,7 @@ pipeline {
         }
 		
 
-                stage('Deploy') {
+               /* stage('Deploy') {
             steps {
 					withCredentials([usernamePassword(credentialsId: 'nexus', usernameVariable: 'admin', passwordVariable: 'Alternance1997')])
                         nexusArtifactUploader(
@@ -62,6 +62,7 @@ pipeline {
                             ]
                          )
             }
+			*/
             }
     }
 }
