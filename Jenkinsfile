@@ -44,9 +44,9 @@ pipeline {
         }
 		
 
-               /* stage('Deploy') {
+                stage('Deploy') {
             steps {
-					withCredentials([usernamePassword(credentialsId: 'nexus', usernameVariable: 'admin', passwordVariable: 'Alternance1997')])
+					/* withCredentials([usernamePassword(credentialsId: 'nexus', usernameVariable: 'admin', passwordVariable: 'Alternance1997')])
                         nexusArtifactUploader(
                             nexusVersion: 'nexus3',
                             protocol: 'http',
@@ -60,9 +60,9 @@ pipeline {
                                  file: 'target/ExamThourayaS2-0.0.1-SNAPSHOT.jar',
                                  type: 'jar']
                             ]
-                         )
+                         ) */
             }
-			*/
+			
             }
     }
 }
